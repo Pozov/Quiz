@@ -15,9 +15,9 @@ const FinishedQuiz = props => {
 
                     return (
                         <li key={index}>
-                            <strong>{index + 1}></strong>. &nbsp;
+                            <strong>{index + 1}</strong>. &nbsp;
                             {quizItem.question}
-                            <i className={cls.join('')} />
+                            <i className={cls.join(' ')} />
                         </li>
                 )
 
@@ -34,7 +34,7 @@ const FinishedQuiz = props => {
                 {/*</li>*/}
             </ul>
 
-            <p>Правильно 4 из 10</p>
+            <p>Правильно 2 из 2</p>
             <div>
                 <button>Повторить</button>
             </div>

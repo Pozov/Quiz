@@ -6,7 +6,7 @@ const ActiveQuiz = props => (
     <div className={classes.ActiveQuiz}>
         <p className={classes.Question}>
             <span>
-                <strong>1.</strong>&nbsp;
+                <strong>{props.iOd}.</strong>&nbsp;
                 {props.question}
             </span>
 
