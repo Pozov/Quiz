@@ -1,8 +1,21 @@
 import React from "react";
 import classes from './FinishedQuiz.module.css'
 import {lines} from "prompts/lib/util";
+import Button from "../UI/Button/Button";
 
 const FinishedQuiz = props => {
+    const successCount = Object.keys(props.results).reduce((total, key) => {
+        if (props.results[key] === 'success') {
+            total++
+        }
+
+        return total
+    }, 0)
+
+      
+
+    
+    
     return (
         <div className={classes.FinishedQuiz}>
             <ul>
@@ -22,21 +35,12 @@ const FinishedQuiz = props => {
                 )
 
                 })}
-                {/*<li>*/}
-                {/*    <strong>1.</strong>*/}
-                {/*    How are you*/}
-                {/*    <i className={'fa fa-times ' + classes.error}/>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                {/*    <strong>2.</strong>*/}
-                {/*    How are you*/}
-                {/*    <i className={'fa fa-check ' + classes.success}/>*/}
-                {/*</li>*/}
             </ul>
 
-            <p>Правильно 2 из 2</p>
+            <p>Правильно {successCount} из {props.quiz.length}</p>
             <div>
-                <button>Повторить</button>
+                <Button onClick={props.onRetry} type="primary">Повторить</Button>
+                <Button type="success">Перейти в список тестов</Button>
             </div>
         </div>
     )
